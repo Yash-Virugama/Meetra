@@ -417,14 +417,13 @@
   height: 22px !important;
   color: #777680;
   pointer-events: none;
-  rotate: 180deg;
-  transform: translateY(-50%);
+  transform: translateY(40%) rotate(180deg);
   transition: color 180ms ease, transform 180ms ease;
 }
 
 .meeting-input-wrap input:focus+.key-icon {
   color: #e78260;
-  transform: translateY(-50%) rotate(-8deg);
+  transform: translateY(40%) rotate(188deg);
 }
 
 .pass-actions {

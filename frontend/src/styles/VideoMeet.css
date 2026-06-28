@@ -1102,6 +1102,7 @@
     .meet-chat-drawer {
         width: 100% !important;
         border-radius: 0;
+        overflow-y: auto;
     }
 }
 
