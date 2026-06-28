@@ -335,7 +335,7 @@ export default function Authentication() {
                     name="fullname"
                     label="Full Name"
                     value={name}
-                    autoFocus
+                    // autoFocus
                     onChange={handleNameChange}
                     onBlur={handleNameBlur}
                     error={Boolean(errors.name)}
@@ -352,7 +352,7 @@ export default function Authentication() {
                   name="username"
                   label="Username"
                   value={username}
-                  autoFocus={formState === 0}
+                  // autoFocus={formState === 0}
                   onChange={handleUsernameChange}
                   onBlur={handleUsernameBlur}
                   error={Boolean(errors.username)}

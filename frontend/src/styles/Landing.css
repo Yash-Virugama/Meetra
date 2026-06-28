@@ -77,6 +77,8 @@
     font-weight: 700;
     text-decoration: none;
     cursor: pointer;
+    border: none;
+    background-color: transparent;
 }
 
 .meeting-button {

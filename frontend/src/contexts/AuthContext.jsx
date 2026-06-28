@@ -102,8 +102,6 @@ export const AuthProvider = ({ children }) => {
                     response.data.token
                 );
 
-                console.log(localStorage.getItem("token"));
-
                 setUserData(response.data);
 
                 showSnackbar("User logged in successfully!", "success");

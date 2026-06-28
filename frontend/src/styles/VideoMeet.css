@@ -1125,16 +1125,3 @@
         min-width: 180px !important;
     }
 }
-
-/* Hide scrollbar completely on VideoMeet page */
-.videomeet-layout,
-.videomeet-layout * {
-    scrollbar-width: none !important; /* Firefox */
-}
-
-.videomeet-layout::-webkit-scrollbar,
-.videomeet-layout *::-webkit-scrollbar {
-    width: 0 !important;
-    height: 0 !important;
-    display: none !important; /* Webkit */
-}

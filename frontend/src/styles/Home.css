@@ -957,6 +957,11 @@
 
   .pass-main {
     padding: 20px 20px;
+    background-color: #fbf4ef;
+  }
+
+  .meeting-input-wrap input {
+    border: 1px solid rgba(49, 49, 60, 0.445);
   }
 }
 

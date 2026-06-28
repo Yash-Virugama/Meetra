@@ -66,17 +66,17 @@ export default function Landing() {
           </p>
 
           <div className="hero-actions">
-            <a onClick={handleCreateMeeting}
+            <button onClick={handleCreateMeeting}
               className="meeting-button">
               <span className="camera-icon" aria-hidden="true" />
               Create / Join meeting
-            </a>
+            </button>
 
-            {!localStorage.getItem("token") ? <a onClick={joinAsGuest}
+            {!localStorage.getItem("token") ? <button onClick={joinAsGuest}
               className="watch-link" aria-label="Join as Guest">
               <span className="play-button" aria-hidden="true" />
               Join as Guest
-            </a> : <></>}
+            </button> : <></>}
           </div>
         </div>
 
