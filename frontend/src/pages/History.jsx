@@ -95,17 +95,17 @@ function History() {
 
                 <div className="nav-actions" aria-label="Main navigation">
 
-                    <a onClick={() => {
+                    <button onClick={() => {
                         navigate("/home");
                     }}
                         className="nav-link">
                         Home
-                    </a>
+                    </button>
 
-                    <a onClick={handleLogout}
+                    <button onClick={handleLogout}
                         className="nav-button">
                         Log Out
-                    </a>
+                    </button>
 
                 </div>
             </nav>

@@ -77,6 +77,13 @@ export default function VideoMeet() {
         hideLoader();
     }, [location.pathname, hideLoader]);
 
+    useEffect(() => {
+        document.documentElement.classList.add('hide-scrollbar');
+        return () => {
+            document.documentElement.classList.remove('hide-scrollbar');
+        };
+    }, []);
+
     // for snackbar
 
     useEffect(() => {
@@ -727,7 +734,7 @@ export default function VideoMeet() {
 
     // ---------- Render ----------
     return (
-        <div>
+        <div className="videomeet-layout">
             {askForUsername ? (
                 <div className="videomeet-page">
 
@@ -744,20 +751,20 @@ export default function VideoMeet() {
 
                         <div className="nav-actions" aria-label="Main navigation">
 
-                            {localStorage.getItem("token") ? <a onClick={leaveRoom}
+                            {localStorage.getItem("token") ? <button onClick={leaveRoom}
                                 className="nav-link">
                                 Home
-                            </a> : <></>}
+                            </button> : <></>}
 
-                            {localStorage.getItem("token") ? <a onClick={handleLogout}
+                            {localStorage.getItem("token") ? <button onClick={handleLogout}
                                 className="nav-button">
                                 Log Out
-                            </a> : <a onClick={() => {
+                            </button> : <button onClick={() => {
                                 navigate("/auth?mode=login");
                             }}
                                 className="nav-button">
                                 Login
-                            </a>}
+                            </button>}
 
                         </div>
                     </nav>
@@ -885,20 +892,20 @@ export default function VideoMeet() {
 
                         <div className="nav-actions" aria-label="Main navigation">
 
-                            {localStorage.getItem("token") ? <a onClick={leaveRoom}
+                            {localStorage.getItem("token") ? <button onClick={leaveRoom}
                                 className="nav-link">
                                 Home
-                            </a> : <></>}
+                            </button> : <></>}
 
-                            {localStorage.getItem("token") ? <a onClick={handleLogout}
+                            {localStorage.getItem("token") ? <button onClick={handleLogout}
                                 className="nav-button">
                                 Log Out
-                            </a> : <a onClick={() => {
+                            </button> : <button onClick={() => {
                                 navigate("/auth?mode=login");
                             }}
                                 className="nav-button">
                                 Login
-                            </a>}
+                            </button>}
 
                         </div>
                     </nav>

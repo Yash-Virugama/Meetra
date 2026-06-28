@@ -1,7 +1,7 @@
-.loader-overlay {
+/* .loader-overlay {
     position: fixed;
     inset: 0;
-    background: rgb(255, 255, 255);
+    background: rgb(255, 255, 255, 0.9);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,4 +22,146 @@
     to {
         transform: rotate(360deg);
     }
+} */
+
+.loader-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(251, 244, 239, 0.96); /* Theme beige, slightly transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    backdrop-filter: blur(4px); /* Modern blur effect for loading overlay */
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.loader-shapes {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 30px;
+    height: 80px; /* Contain the bounce path */
+}
+
+.loader-shape {
+    border: 3px solid #111116;
+    box-shadow: 4px 4px 0 #111116;
+    transition: transform 0.2s ease;
+}
+
+.loader-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #9dd8d5; /* Aqua */
+    animation: neoBounceCircle 1.2s infinite ease-in-out;
+}
+
+.loader-square {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: #ffd851; /* Yellow */
+    animation: neoBounceSquare 1.2s infinite ease-in-out;
+    animation-delay: 0.2s;
+}
+
+.loader-capsule {
+    width: 48px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: #ec7653; /* Orange */
+    animation: neoBounceCapsule 1.2s infinite ease-in-out;
+    animation-delay: 0.4s;
+}
+
+/* Animations for each shape to lift off the ground and keep shadow in place */
+@keyframes neoBounceCircle {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        box-shadow: 4px 4px 0 #111116;
+    }
+    50% {
+        transform: translateY(-35px) rotate(180deg);
+        box-shadow: 4px 39px 0 #111116;
+    }
+}
+
+@keyframes neoBounceSquare {
+    0%, 100% {
+        transform: translateY(0) rotate(45deg);
+        box-shadow: 4px 4px 0 #111116;
+    }
+    50% {
+        transform: translateY(-35px) rotate(225deg);
+        box-shadow: 4px 39px 0 #111116;
+    }
+}
+
+@keyframes neoBounceCapsule {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+        box-shadow: 4px 4px 0 #111116;
+    }
+    50% {
+        transform: translateY(-35px) rotate(-180deg);
+        box-shadow: 4px 39px 0 #111116;
+    }
+}
+
+/* Neo-brutalist Loading Text styles */
+.loader-text {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: #111116;
+    display: flex;
+    align-items: flex-end;
+    gap: 1px;
+    letter-spacing: 0.05em;
+    text-shadow: 2px 2px 0 rgba(233, 128, 12, 0.15);
+}
+
+.loader-text .dot {
+    display: inline-block;
+    opacity: 0;
+}
+
+/* Define animations for each dot to achieve sequential appearance */
+.loader-text .dot:nth-of-type(1) {
+    animation: dotShow1 1.6s infinite linear;
+}
+.loader-text .dot:nth-of-type(2) {
+    animation: dotShow2 1.6s infinite linear;
+}
+.loader-text .dot:nth-of-type(3) {
+    animation: dotShow3 1.6s infinite linear;
+}
+
+@keyframes dotShow1 {
+    0% { opacity: 0; }
+    15% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes dotShow2 {
+    0%, 30% { opacity: 0; }
+    45% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+@keyframes dotShow3 {
+    0%, 60% { opacity: 0; }
+    75% { opacity: 1; }
+    85% { opacity: 1; }
+    100% { opacity: 0; }
 }

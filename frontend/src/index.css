@@ -1,18 +1,19 @@
 * {
   box-sizing: border-box;
-
-  /* Firefox */
-  scrollbar-width: thin;
-  /* scrollbar-color: #df8b34 #faf8f5; */
 }
 
-*:hover {
-  scrollbar-width: thin;
-  scrollbar-color: #df8b34 transparent;
-}
+/* Firefox Fallback: Apply scrollbar-color only when webkit scrollbars are not supported */
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
 
-*:not(:hover) {
-  scrollbar-color: transparent transparent;
+  /* Firefox: Show scrollbar color on scroll only */
+  html.scrolling,
+  .scrolling {
+    scrollbar-color: #df8b34 transparent;
+  }
 }
 
 html,
@@ -28,25 +29,59 @@ body {
   min-width: 300px;
 }
 
+/* Webkit scrollbar base styling (constant size to prevent layout shifts) */
 ::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+  width: 8px;
+  height: 8px;
+  background: transparent !important;
 }
 
-*:hover::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-
+/* Hide scrollbar track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: transparent !important;
 }
 
+/* Hide scrollbar track-piece */
+::-webkit-scrollbar-track-piece {
+  background: transparent !important;
+}
+
+/* Hide scrollbar corner */
+::-webkit-scrollbar-corner {
+  background: transparent !important;
+}
+
+/* Hide scrollbar buttons (arrows) */
+::-webkit-scrollbar-button {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+/* By default, scrollbar thumb is transparent (invisible) */
 ::-webkit-scrollbar-thumb {
-  background: #df8b34;
+  background: transparent;
   border-radius: 10px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+/* Show orange thumb when scrolling */
+.scrolling::-webkit-scrollbar-thumb {
+  background: #df8b34;
+}
+
+::-webkit-scrollbar-thumb:active {
   background: #c97722;
+}
+
+/* Global scrollbar override for components that request hiding it (e.g. VideoMeet) */
+html.hide-scrollbar,
+html.hide-scrollbar * {
+  scrollbar-width: none !important; /* Firefox */
+}
+
+html.hide-scrollbar::-webkit-scrollbar,
+html.hide-scrollbar *::-webkit-scrollbar {
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important; /* Webkit */
 }

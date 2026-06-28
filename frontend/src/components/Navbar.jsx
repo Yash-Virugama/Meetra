@@ -30,38 +30,38 @@ export default function Navbar() {
 
       <div className="nav-actions" aria-label="Main navigation">
 
-        {localStorage.getItem("token") ? <a onClick={() => {
+        {localStorage.getItem("token") ? <button onClick={() => {
           navigate("/home");
         }}
           className="nav-link">
           Home
-        </a> : <></>}
+        </button> : <></>}
 
-        {!localStorage.getItem("token") ? <a onClick={joinAsGuest}
+        {!localStorage.getItem("token") ? <button onClick={joinAsGuest}
           className="nav-link">
           Join as Guest
-        </a> : <></>}
+        </button> : <></>}
 
-        {!(localStorage.getItem("token")) ? <a onClick={() => {
+        {!(localStorage.getItem("token")) ? <button onClick={() => {
           navigate("/auth?mode=register");
         }}
           className="nav-link">
           Register
-        </a> : <></>}
+        </button> : <></>}
 
         {!(localStorage.getItem("token")) ?
 
-          <a onClick={() => {
+          <button onClick={() => {
             navigate("/auth?mode=login");
           }}
             className="nav-button">
             Login
-          </a> :
+          </button> :
 
-          <a onClick={handleLogout}
+          <button onClick={handleLogout}
             className="nav-button">
             Log Out
-          </a>}
+          </button>}
 
       </div>
     </nav>

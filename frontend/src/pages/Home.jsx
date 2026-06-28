@@ -150,23 +150,18 @@ function Home() {
 
         <div className="nav-actions" aria-label="Main navigation">
 
-          {/* <a onClick={handleCreateMeeting}
-            className="nav-link">
-            Start meeting
-          </a> */}
-
-          <a onClick={() => {
+          <button onClick={() => {
             navigate("/history");
           }}
             className="nav-link"
             style={{ display: "flex", alignItems: "center", gap: "5px" }}>
             <RestoreIcon />History
-          </a>
+          </button>
 
-          <a onClick={handleLogout}
+          <button onClick={handleLogout}
             className="nav-button">
             Log Out
-          </a>
+          </button>
 
         </div>
       </nav>
@@ -290,13 +285,6 @@ function Home() {
                   <span className="mini-camera" aria-hidden="true" />
                   Join meeting via link
                 </button>
-
-                {/* <button type="button" className="create-submit" onClick={handleCreateMeeting}>
-                  <span className="mini-camera" aria-hidden="true" />
-                  Create meeting
-                </button> */}
-
-
               </div>
 
               <p className={notice ? "home-notice visible" : "home-notice"}>

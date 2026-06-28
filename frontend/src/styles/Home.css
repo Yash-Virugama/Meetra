@@ -1034,9 +1034,16 @@
   }
 
   .key-icon {
-    width: 17px !important;
-    height: 17px !important;
-    top: 4px;
+    width: 20px !important;
+    height:20px !important;
+    top: 3px;
+    right: 113px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 370px) {
+    .studio-heading h1 {
+    font-size: 24px !important;
   }
 }
 
