@@ -97,7 +97,7 @@ Users can securely create or join meetings, communicate through high-quality vid
 
 ---
 
-## Regist
+## Registration
 
 <p align="center">
 <img src="screenshots/login.png" width="900">
@@ -124,7 +124,7 @@ Users can securely create or join meetings, communicate through high-quality vid
 ## Meeting Page
 
 <p align="center">
-<img src="screenshots/video-meet.png" width="900">
+<img src="screenshots/video_meet.png" width="900">
 </p>
 
 ---
