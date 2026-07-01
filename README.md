@@ -15,14 +15,18 @@
 </p>
 
 <p align="center">
-
-[![React](https://img.shields.io/badge/React-19-blue?logo=react)]()
-[![Node.js](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)]()
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green?logo=mongodb)]()
-[![WebRTC](https://img.shields.io/badge/WebRTC-RealTime-orange)]()
-[![Socket.IO](https://img.shields.io/badge/Socket.IO-4.x-black?logo=socketdotio)]()
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)]()
-
+  <a href="https://react.dev">
+    <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React">
+  </a>
+  <a href="https://nodejs.org">
+    <img src="https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white" alt="Node.js">
+  </a>
+  <a href="https://www.mongodb.com">
+    <img src="https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb&logoColor=white" alt="MongoDB">
+  </a>
+  <img src="https://img.shields.io/badge/WebRTC-RealTime-orange" alt="WebRTC">
+  <img src="https://img.shields.io/badge/Socket.IO-4.x-010101?logo=socketdotio&logoColor=white" alt="Socket.IO">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License">
 </p>
 
 ---
